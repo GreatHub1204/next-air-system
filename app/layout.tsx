@@ -4,7 +4,8 @@ import "./globals.css";
 
 import ClientOnly from "./components/ClientOnly";
 import Navbar from "./components/navbar/Navbar";
-import Modal from "./components/modals/Modal";
+import RegisterModal from "./components/modals/RegisterModal";
+import ToasterProvider from "./providers/ToasterProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,10 +23,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ClientOnly>
-          <Modal actionLabel="Submit" title="Login Modal" isOpen/>
+          <ToasterProvider />
+          <RegisterModal />
           <Navbar />
         </ClientOnly>
-
         {children}
       </body>
     </html>
